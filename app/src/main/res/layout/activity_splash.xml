@@ -15,8 +15,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="200dp"
         android:contentDescription="@string/app_icon"
-        android:src="@drawable/ic_launcher_background"
-        app:srcCompat="@drawable/app_icon_foreground" />
+        android:src="@drawable/cureitfg" />
 
     <TextView
         android:id="@+id/textView"
