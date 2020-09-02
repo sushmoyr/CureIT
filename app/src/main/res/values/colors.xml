@@ -8,4 +8,7 @@
     <color name="White">#FFFFFF</color>
     <color name="LightBlue1">#0288D1</color>
     <color name="Indigo1">#3F51B5</color>
+    <color name="Red">#D50000</color>
+    <color name="Red2">#B71C1C</color>
+    <color name="Snow">#FFFAFA</color>
 </resources>
