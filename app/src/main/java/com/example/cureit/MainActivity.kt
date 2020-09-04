@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         val checker:Int = hours.toInt()
         if(checker>=5 && checker <12)
             greetings.text = "Good Morning!!"
-        else if(checker>=12 && checker<6)
+        else if(checker>=12 && checker<18)
             greetings.text = "Good Afternoon!!"
-        else if(checker>=6 && checker<12)
+        else if(checker>=18 && checker<23)
             greetings.text = "Good Evening!!"
         else
             greetings.text = "Good Night!!"
