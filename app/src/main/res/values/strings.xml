@@ -2,5 +2,9 @@
     <string name="app_name">CureIT</string>
     <string name="slogan">Your Doorstep Medical Solution</string>
     <string name="app_icon">AppIcon</string>
+    <string name="InjurySupport">Injury Support</string>
+    <string name="IllnessSupport">Illness Support</string>
+    <string name="about">About</string>
+    <string name="Exit">Exit</string>
 
 </resources>

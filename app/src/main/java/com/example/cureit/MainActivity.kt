@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -16,16 +17,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         greetings()
-           val startChatBtn:Button = findViewById(R.id.start_chat)
-        startChatBtn.setOnClickListener{
+        val injuryChatBtn:Button = findViewById(R.id.injury_chat)
+        injuryChatBtn.setOnClickListener{
 
-            val intent = Intent(this, MainActivity2::class.java)
-            startActivity(intent)
+            val injuryIntent = Intent(this, Injury::class.java)
+            startActivity(injuryIntent)
+        }
+
+        val illChatBtn:Button = findViewById(R.id.illness_chat)
+        illness_chat.setOnClickListener{
+            val illIntent = Intent(this, IllnessChat::class.java)
+            startActivity(illIntent)
         }
 
         val aboutBtn:Button = findViewById(R.id.about)
-        aboutBtn.setOnClickListener{
-            Toast.makeText(this, "About not set. Stay Tuned", Toast.LENGTH_SHORT).show()
+        aboutBtn.setOnClickListener {
+            Toast.makeText(applicationContext, "About not set. Stay Tuned!!", Toast.LENGTH_SHORT).show()
         }
 
         val exitBtn:Button = findViewById(R.id.exit)

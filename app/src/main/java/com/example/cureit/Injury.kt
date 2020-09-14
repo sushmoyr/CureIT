@@ -1,7 +1,7 @@
 package com.example.cureit
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.example.cureit.databinding.ItemMessageReceiveBinding
 import com.example.cureit.databinding.ItemMessageSendBinding
 import com.example.cureit.model.Message
@@ -14,22 +14,13 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-//class MainActivity2 : AppCompatActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main2)
-//
-//        val msg:TextView = findViewById(R.id.temptext)
-//        msg.text = "Yeah Its working Oniii Chan!!!!"
-//    }
-
-class MainActivity2 : AppCompatActivity() {
+class Injury : AppCompatActivity() {
 
     private val messageAdapter = GroupAdapter<GroupieViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_injury)
 
         recyclerView.adapter = messageAdapter
         //populateData()
@@ -45,17 +36,6 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    /*private fun populateData() {
-        val data = listOf<Message>()
-        data.forEach {
-            if (it.sendBy == "me") {
-                messageAdapter.add(SendMessageItem(it))
-            } else {
-                messageAdapter.add(ReceiveMessageItem(it))
-            }
-        }
-    }*/
-
     private fun receiveResponse() {
         GlobalScope.launch(Dispatchers.Main) {
             delay(1000)
@@ -70,4 +50,30 @@ class MainActivity2 : AppCompatActivity() {
     }
 }
 
+class SendMessageItem(private val message: Message) : BindableItem<ItemMessageSendBinding>()
+{
 
+    override fun getLayout(): Int
+    {
+        return R.layout.item_message_send
+    }
+
+    override fun bind(viewBinding: ItemMessageSendBinding, position: Int)
+    {
+        if(message.msg.isNullOrEmpty())
+            return
+        else
+            viewBinding.message = message
+    }
+}
+
+class ReceiveMessageItem(private val message: Message) : BindableItem<ItemMessageReceiveBinding>()
+{
+    override fun getLayout(): Int {
+        return R.layout.item_message_receive
+    }
+
+    override fun bind(viewBinding: ItemMessageReceiveBinding, position: Int) {
+        viewBinding.message = message
+    }
+}
