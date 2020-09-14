@@ -2,7 +2,7 @@
 
 **Last Updated: 15:09:2020**
 
-##Changes
+## Changes
 
 - [x] Changed UI
 - [x] Added Readme
@@ -11,8 +11,8 @@
 - [x] Added Database
 - [x] Updated Injury Database
 
-##Project Settings
+## Project Settings
 
 **Project folder name: CureIT**
 
-```Must change the project folder name or else the project will be brocken```
+```Must change the project folder name or else the project will be broken```
